@@ -257,7 +257,7 @@ int initialization(void)
 	fp = fopen(sysFile, "r");
 	for (i = 0; i < nPart; i++)
 	{
-		fscanf(fp, "%lG %lG %lG %lG %lG %lG \n", &Medium[i].x, &Medium[i].z, &Medium[i].y, &Medium[i].radius, &Medium[i].theta, &Medium[i].k);
+		if (fscanf(fp, "%lG %lG %lG %lG %lG %lG \n", &Medium[i].x, &Medium[i].z, &Medium[i].y, &Medium[i].radius, &Medium[i].theta, &Medium[i].k)) {};
 		if (Medium[i].x > depth)	// to remember maximum value for x
 			depth = Medium[i].x;
 	}
